@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getContacts } from '../../redux/selectors';
 import { addContact } from '../../redux/contactsSlice';
 import { Notify } from "notiflix";
+import { paramsForNotify } from "components/paramsForNotify";
 
 const AddContactForm = ()=> {
   const [name, setName] = useState('')
@@ -39,18 +40,13 @@ const AddContactForm = ()=> {
    const isAdded = contacts.find(el => el.name.toLowerCase() === normalizedName) 
 
    if (isAdded) {
-    Notify.failure(`${name}: is already in contacts`, {
-      position: 'top-center',
-      timeout: 5000,
-      width: '400px',
-      fontSize: '24px'
-    })
+    Notify.failure(`${name}: is already in contacts`, paramsForNotify)
     setName('')
     setNumber('')
     return;
   }
     dispatch(addContact({ name, number }))
-    Notify.success(`Contact ${name} has been added to your Contacts`)
+    Notify.success(`Contact ${name} has been added to your Contacts`, paramsForNotify)
     resetForm();
   }
 

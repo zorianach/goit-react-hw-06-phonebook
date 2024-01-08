@@ -15,6 +15,10 @@ const ContactItem = styled.li`
     padding: 0;
     align-items: center;
     
+    span {
+      color: rgb(32, 12, 51);
+      font-weight: 600;
+    }
 `;
 
 const Line = styled.p`
