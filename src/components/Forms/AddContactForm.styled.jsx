@@ -5,7 +5,7 @@ const Form = styled.form`
   flex-direction: column;
   align-items: start;
   margin-top:20px;
-  margin-left: 20px;
+  // margin-left: 20px;
 `;
 
 const Label = styled.label`
