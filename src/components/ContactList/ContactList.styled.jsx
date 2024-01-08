@@ -4,12 +4,13 @@ const ContactListStyle = styled.ul`
     padding: 0px;
     // margin-left: 20px;
     margin: 0px;
-    width: 422px;
+    width: 400px;
     list-style-type: disc;
 `
 const ContactItem = styled.li`
     display: flex;
-    justify-content: flex-start;
+    // justify-content: flex-start;
+    justify-content: space-between;
     gap: 20px;
     width: 372px;
     padding: 0;
