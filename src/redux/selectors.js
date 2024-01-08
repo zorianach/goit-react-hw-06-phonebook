@@ -1,17 +1,18 @@
+import { paramsForNotify } from "components/paramsForNotify";
 import { Notify } from "notiflix";
 
-export const getContacts = store => store.contacts;
+export const getContacts = state => state.contacts;
 // console.log( )
 
-export const getFilter = store => {
+export const getFilter = state => {
     // console.log('store.filter', store.filter)
-    return store.filter; 
+    return state.filter; 
 }
 
-export const getFilteredContacts = store => {
+export const getFilteredContacts = state => {
     // const { filter, contacts } = store;//     
-    const {contacts} = getContacts(store); 
-    const filter = getFilter(store); 
+    const {contacts} = getContacts(state); 
+    const filter = getFilter(state); 
 // console.log('filter', filter)
     if (!filter) {
         // console.log('!filter', filter)
@@ -26,7 +27,7 @@ export const getFilteredContacts = store => {
         );
         
         if (normalizedFilter && !filteredContacts.length) {
-        Notify.failure(`No contacts matching your request`);
+        Notify.failure(`No contacts matching your request`, paramsForNotify);
       }
     return filteredContacts}
   };

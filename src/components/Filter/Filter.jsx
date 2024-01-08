@@ -16,13 +16,13 @@ const Filter = () => {
 
   return (
     <FormFilter>
-      <LabelFilter> Find contacts:
+      <LabelFilter> Find contact:
       </LabelFilter>
       <InputFilter
           type="name"
           value={filterValue}
           onChange={setFilter}
-          placeholder="Please enter a name to search"
+          placeholder="Please enter a name or number to search"
         />
     </FormFilter>
   );
