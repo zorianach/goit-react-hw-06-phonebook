@@ -16,7 +16,7 @@ const Filter = () => {
 
   return (
     <FormFilter>
-      <LabelFilter> Find contacts by name
+      <LabelFilter> Find contacts:
       </LabelFilter>
       <InputFilter
           type="name"

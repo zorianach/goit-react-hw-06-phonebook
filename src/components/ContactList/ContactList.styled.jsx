@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ContactListStyle = styled.ul`
     padding: 0px;
-    margin-left: 20px;
+    // margin-left: 20px;
     margin: 0px;
     width: 422px;
     list-style-type: disc;
@@ -11,7 +11,7 @@ const ContactItem = styled.li`
     display: flex;
     justify-content: flex-start;
     gap: 20px;
-    width: 400px;
+    width: 372px;
     padding: 0;
     align-items: center;
     
@@ -20,7 +20,7 @@ const ContactItem = styled.li`
 const Line = styled.p`
 margin: 0px;
 line-height: 2;
-margin-left: 40px;
+// margin-left: 40px;
 `;
 
 const DeleteButton = styled.button`
