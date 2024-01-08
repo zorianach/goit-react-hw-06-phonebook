@@ -4,6 +4,7 @@ import { ContactListStyle, ContactItem, Line, DeleteButton} from "./ContactList.
 import { getFilteredContacts } from "../../redux/selectors";
 import { deleteContact } from "../../redux/contactsSlice";
 import { Notify } from "notiflix";
+import { paramsForNotify } from "components/paramsForNotify";
 
 const ContactList = () => {
 
@@ -13,7 +14,7 @@ const ContactList = () => {
  
     const onDeleteContact = (id, name) => {
         dispatch(deleteContact(id))
-        return (Notify.info(`Contact ${name} has been deleted from your Contacts`))
+        return (Notify.info(`Contact ${name} has been deleted from your Contacts`, paramsForNotify))
  
       };
     return ( <ContactListStyle>
@@ -21,7 +22,7 @@ const ContactList = () => {
                 return (
                 <>
                 <ContactItem key={id} >
-                    <Line>{name}: {number}</Line>
+                    <Line>{name}: <span>{number}</span></Line>
                     <DeleteButton type="button" onClick={() => onDeleteContact(id, name)}>Delete</DeleteButton>
                 </ContactItem>
                 </>
